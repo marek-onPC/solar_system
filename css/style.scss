@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body
+{
+    overflow-x: hidden;
+}
+
+.scene
+{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, #000 0%, #050548 125%);
+    position: relative;
+    animation: sun_bg;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    // overflow: hidden;
+    .sun
+    {
+        width: 550px;
+        height: auto;
+        position: absolute;
+        top: calc(50% - 275px);
+        left: calc(50% - 275px);
+        z-index: 10;
+    }
+    .mercury
+    {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        top: 10%;
+        left: 25%;
+        z-index: 9;
+        transform: rotateZ(0);
+    }
+    .venus
+    {
+        width: 150px;
+        height: auto;
+        position: absolute;
+        top: 65%;
+        left: 30%;
+        z-index: 8;
+        transform: rotateZ(50deg);
+    }
+    .earth
+    {
+        width: 180px;
+        height: auto;
+        position: absolute;
+        top: 22%;
+        left: 38%;
+        z-index: 8;
+        transform: rotateZ(20deg);
+    }
+    .mars
+    {
+        width: 160px;
+        height: auto;
+        position: absolute;
+        top: 53%;
+        left: 49%;
+        transform: rotateZ(45deg);
+    }
+    .jupiter
+    {
+        width: 250px;
+        height: auto;
+        position: absolute;
+        top: 2%;
+        left: 56%;
+        transform: rotateZ(7deg);
+    }
+    .saturn
+    {
+        width: 300px;
+        height: auto;
+        position: absolute;
+        top: 67%;
+        left: 63%;
+        transform: rotateZ(45deg);
+    }
+    .neptune
+    {
+        width: 180px;
+        height: auto;
+        position: absolute;
+        top: 51%;
+        left: 86%;
+        transform: rotateZ(45deg);
+    }
+    .uranus
+    {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        top: 23%;
+        left: 77%;
+        transform: rotateZ(28deg);
+    }
+    .pluto
+    {
+        width: 75px;
+        height: auto;
+        position: absolute;
+        top: 1%;
+        left: 94%;
+        transform: rotateZ(10deg);
+    }
+
+    h1
+    {
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 46px;
+        width: 300px;
+        position: absolute;
+        top: 77%;
+        left: calc(50% - 100px);
+        letter-spacing: 5px;
+        color: #fff;
+    }
+    p
+    {
+        text-align: center;
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 16px;
+        width: 300px;
+        position: absolute;
+        top: 86%;
+        left: calc(50% - 153px);
+        letter-spacing: 5px;
+        color: #fff;
+    }
+    span
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 16px;
+        position: absolute;
+        bottom: 0%;
+        left: calc(50% - 75px);
+        letter-spacing: 5px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.25);
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        animation: jump 0.75s ease-in-out 0s infinite alternate;
+        
+    }
+}
+
+.break_one
+{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    position: relative;
+    h1
+    {
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 46px;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        letter-spacing: 5px;
+        color: #fff;
+    }
+    h2
+    {
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 46px;
+        position: absolute;
+        bottom: 25%;
+        right: 5%;
+        letter-spacing: 5px;
+        color: #fff;
+    }
+}
+.scene_sun
+{
+    width: 100vw;
+    height: 100vh;
+    // background: #000;
+    background: radial-gradient(circle, rgb(90, 54, 17) 0%, rgba(0,0,0,1) 40%);
+    position: relative;
+
+    .sun_container
+    {
+        width: auto;
+        height: 100%;
+        z-index: 2;
+        .sun_self
+        {
+            width: 400px;
+            height: auto;
+            position: absolute;
+            top: calc(50% - 200px);
+            left: calc(50% - 200px);
+            z-index: 10;
+        }
+        p
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Bebas Neue', 'sans-serif';
+            font-size: 16px;
+            opacity: 0;
+            letter-spacing: 5px;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.25);
+            width: 150px;
+            height: auto;
+            padding: 10px;
+            border-radius: 15px;
+            span
+            {
+                margin-top: 5px;
+                color: #fb8108ff;
+            }
+            &:nth-child(2)
+            {
+                position: absolute;
+                top: 18%;
+                left: 57%;
+            }
+            &:nth-child(3)
+            {
+                position: absolute;
+                top: 40%;
+                left: 27%;
+            }
+            &:nth-child(4)
+            {
+                position: absolute;
+                top: 60%;
+                left: 62%;
+            }
+            
+        }
+    }
+
+    .sun_orbit
+    {
+        width: 600px;
+        height: auto;
+        position: absolute;
+        top: calc(50% - 300px);
+        left: calc(50% - 300px);
+        opacity: 1;
+    }
+    .magni_sun
+    {
+        width: 500px;
+        height: auto;
+        position: absolute;
+        top: calc(50% - 250px);
+        left: calc(50% - 250px);
+        opacity: 0;
+    }
+    p
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 16px;
+        opacity: 0;
+        letter-spacing: 5px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.25);
+        width: 250px;
+        height: auto;
+        padding: 10px;
+        border-radius: 15px;
+        span
+        {
+            margin-top: 5px;
+            color: #fb8108ff;
+        }
+
+        &:nth-child(3)
+        {
+            position: absolute;
+            top: calc(65%);
+            left: calc(70% - 125px);
+        }
+        &:nth-child(5)
+        {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+        }
+        
+    }
+
+
+}
+
+@keyframes jump
+{
+    from{transform: translateY(0px)}
+    to {transform: translateY(-10px);}
+}
