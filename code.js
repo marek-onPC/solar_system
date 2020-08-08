@@ -1,3 +1,7 @@
+$(window).on("load", function(){
+    $(".loading_screen").fadeOut();
+})
+
 document.addEventListener("DOMContentLoaded", function() {
 
     wow = new WOW(

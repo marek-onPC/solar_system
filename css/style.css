@@ -3,6 +3,41 @@ body {
   overflow-x: hidden;
 }
 
+.loading_screen {
+  position: fixed;
+  top: 0;
+  background: linear-gradient(0deg, #000 0%, #050548 125%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading_screen img {
+  width: 100px;
+  height: auto;
+  animation: load 1s ease-in-out 0s infinite alternate-reverse;
+}
+
+.loading_screen span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Bebas Neue', 'sans-serif';
+  font-size: 16px;
+  letter-spacing: 5px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
 .scene {
   width: 100vw;
   height: 100vh;
@@ -300,5 +335,14 @@ body {
   }
   to {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes load {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(20deg);
   }
 }
