@@ -3,6 +3,7 @@
 body
 {
     overflow-x: hidden;
+    background-color: black;
 }
 
 .loading_screen
@@ -341,6 +342,74 @@ body
             left: 20%;
         }
     }
+}
+
+.planetes_show
+{
+    width: 100vw;
+    height: 100vh;
+    // background: #000;
+    background: radial-gradient(circle, rgb(24, 73, 94) 0%, rgba(0,0,0,1) 40%);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+
+    .planet_container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .planet
+        {
+            width: 75px;
+            height: auto;
+            margin: 0px 20px;
+            position: relative;
+            &::before
+            {
+                content: 'PLANETE';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+    
+            }
+        }
+    
+        .saturn2
+        {
+            width: 150px;
+        }
+
+        p
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Bebas Neue', 'sans-serif';
+            font-size: 16px;
+            opacity: 1;
+            letter-spacing: 5px;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.25);
+            width: 115px;
+            height: auto;
+            padding: 13px 0 10px 5px;
+            border-radius: 15px;
+            position: absolute;
+            span
+            {
+                color: #fb8108ff;
+            }
+        }
+    }
+
 }
 
 @keyframes jump
