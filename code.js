@@ -134,12 +134,12 @@ document.addEventListener("DOMContentLoaded", function() {
         defaults: {duration: 1},
         scrollTrigger:
             {
-                trigger: '.scene_sun',
-                start: "top top",
-                markers: true,
-                pin: true,
-                scrub: 0.5,
-                end: "+=5000"
+                trigger: '.scene_sun', //At which element the animation is triggered
+                start: "top top", //When (which position of div) animation is triggered
+                markers: true, //Developer start/end markers
+                pin: true, //Pin to the top of the div dueign animation
+                scrub: 0.5, //"delay effect"
+                end: "+=5000" //Adds more height to scroll - makes animation longer
             }
     });
     var sun_ani = timeLine_sun.from('.sun_self', {
@@ -182,41 +182,90 @@ document.addEventListener("DOMContentLoaded", function() {
         scale: 0.5, 
         x: -200,
         y: -100
+    }, '-=1')
+    .to('.sun_self', {
+        duration: 0.5,
+        ease: 'Power1.easeOut',
+        opacity: 0,
+        scale: 1.1,
+        x: 50,
+        y: -50
+    }, '-=0.75')
+    .to('.magni_sun', {
+         ease: 'Power1.easeOut',
+         opacity: 1
+    }, '-=0.75')
+    .to('#p5', {
+        ease: 'Power1.easeOut',
+        opacity: 1
     }, '-=1');
-
-    // // Define a new ScrollMagic controller and scene, this will allow us to prepare a scrolling animation
-    // const controller = new ScrollMagic.Controller();
-    // const scene = new ScrollMagic.Scene({
-    //     triggerElement: '.scene_sun',
-    //     duration: 5000,
-    //     triggerHook: 0,
-    // })
-    // .setPin('.scene_sun')
-    // .setTween(sun_ani) //Connecting our animation to ScrollMagic
-    // .addIndicators()
-    // .addTo(controller);
-
-    
+  
 
     var timeLine_planetes = gsap.timeline({
         defaults: {duration: 1},
         scrollTrigger:
             {
                 trigger: '.planet_container',
-                start: "top center",
+                start: "top 75%",
                 markers: true,
             }
     });
     var planetes_ani = timeLine_planetes.to('.planet_container p', {
-        duration: 1,
+        duration: 0.5,
         ease: 'Power1.easeInOut',
         opacity: 1,
         scale: 0.75,
-        y: -75,
-        rotation: -30
-
+        y: -60,
+        rotation: -30,
+        stagger: 0.1,
     });
 
+
+    var timeLine_earth = gsap.timeline({
+        defaults: {duration: 1},
+        scrollTrigger:
+            {
+                trigger: '.planetes_show', //At which element the animation is triggered
+                start: "top top", //When (which position of div) animation is triggered
+                markers: true, //Developer start/end markers
+                pin: true, //Pin to the top of the div dueign animation
+                scrub: 0.5, //"delay effect"
+                end: "+=1000" //Adds more height to scroll - makes animation longer
+            }
+    });
+    var earth_ani = timeLine_earth.to('.not_earth', {
+        duration: 0.75,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: -75,
+        rotation: -30,
+        stagger: 0.1,
+    })
+    .to('.earth2_container', {
+        duration: 0.75,
+        ease: 'Power1.easeInOut',
+        scale: 1.5,
+    })
+    .from('.earth2_p1', {
+        duration: 0.75,
+        ease: 'Power1.easeInOut',
+        rotation: -30,
+    },"-=.75")
+    .to('.earth_info', {
+        duration: 0.75,
+        ease: 'Power1.easeInOut',
+        opacity: 1,
+        scale: 1.2,
+        stagger: 1,
+    })
+    .to('.earth_info', {
+        duration: 0.75,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 1,
+        stagger: 1,
+    },"-=1.25");
 
     //Animation without timeline, sequence based on duration and delay property
     
@@ -240,27 +289,4 @@ document.addEventListener("DOMContentLoaded", function() {
     //     delay: 3,
     //     y: 100,
     // })
-
-
-
-
-    // .to('.sun_self', {
-//     duration: 0.5,
-//     ease: 'Power1.easeOut',
-//     opacity: 0,
-//     scale: 1.1,
-//     x: 50,
-//     y: -50
-// }, '-=0.75')
-    // .to('.magni_sun', {
-    //     duration: 1.25,
-    //     ease: 'Power1.easeOut',
-    //     opacity: 1
-    // }, '-=0.75')
-    // .to('#p5', {
-    //     duration: 1.25,
-    //     ease: 'Power1.easeOut',
-    //     opacity: 1
-    // }, '-=1')
-
 });

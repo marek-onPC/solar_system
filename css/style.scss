@@ -359,6 +359,7 @@ body
     .planet_container
     {
         display: flex;
+        padding-top: 50px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -385,28 +386,71 @@ body
             width: 150px;
         }
 
-        p
+    }
+
+    p
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 16px;
+        opacity: 1;
+        letter-spacing: 5px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.25);
+        width: 115px;
+        height: auto;
+        padding: 13px 0 10px 5px;
+        border-radius: 15px;
+        position: absolute;
+        span
         {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            font-family: 'Bebas Neue', 'sans-serif';
-            font-size: 16px;
-            opacity: 1;
-            letter-spacing: 5px;
-            color: #fff;
-            background-color: rgba(255, 255, 255, 0.25);
-            width: 115px;
-            height: auto;
-            padding: 13px 0 10px 5px;
-            border-radius: 15px;
-            position: absolute;
-            span
-            {
-                color: #fb8108ff;
-            }
+            color: #fb8108ff;
+        }
+    }
+
+    .earth2_p2
+    {
+        top: 20%;
+        right: 40%;
+        width: 135px;
+        height: auto;
+        padding: 13px 0 10px 5px;
+        opacity: 0;
+        span
+        {
+            padding-top: 5px;
+        }
+    }
+
+    .earth2_p3
+    {
+        top: 40%;
+        right: 25%;
+        width: 200px;
+        height: auto;
+        padding: 13px 0 10px 5px;
+        opacity: 0;
+        span
+        {
+            padding-top: 5px;
+        }
+    }
+
+    .earth2_p4
+    {
+        top: 67%;
+        right: 40%;
+        width: 200px;
+        height: auto;
+        padding: 13px 0 10px 5px;
+        opacity: 0;
+        span
+        {
+            padding-top: 5px;
         }
     }
 

@@ -343,6 +343,7 @@ body {
 
 .planetes_show .planet_container {
   display: flex;
+  padding-top: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -368,7 +369,7 @@ body {
   width: 150px;
 }
 
-.planetes_show .planet_container p {
+.planetes_show p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,8 +388,47 @@ body {
   position: absolute;
 }
 
-.planetes_show .planet_container p span {
+.planetes_show p span {
   color: #fb8108ff;
+}
+
+.planetes_show .earth2_p2 {
+  top: 20%;
+  right: 40%;
+  width: 135px;
+  height: auto;
+  padding: 13px 0 10px 5px;
+  opacity: 0;
+}
+
+.planetes_show .earth2_p2 span {
+  padding-top: 5px;
+}
+
+.planetes_show .earth2_p3 {
+  top: 40%;
+  right: 25%;
+  width: 200px;
+  height: auto;
+  padding: 13px 0 10px 5px;
+  opacity: 0;
+}
+
+.planetes_show .earth2_p3 span {
+  padding-top: 5px;
+}
+
+.planetes_show .earth2_p4 {
+  top: 67%;
+  right: 40%;
+  width: 200px;
+  height: auto;
+  padding: 13px 0 10px 5px;
+  opacity: 0;
+}
+
+.planetes_show .earth2_p4 span {
+  padding-top: 5px;
 }
 
 @keyframes jump {
