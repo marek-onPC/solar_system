@@ -10,7 +10,7 @@
     <title>animation</title>
 </head>
 <body>
-    <div class="scene">
+    <div class="scene bg">
         <img class="planet sun" src="css/sun.svg" alt="sun-pic">
         <img class="planet mercury" src="css/mercury.svg" alt="mercury-pic">
         <img class="planet venus" src="css/venus.svg" alt="venus-pic">
@@ -27,11 +27,11 @@
         
 
     </div>
-    <div class="break_one">
-        <h1 class="wow fadeInRight" data-wow-duration="1" data-wow-delay="2">There is so much different things in space...</h1>
-        <h2 class="wow fadeInLeft"  data-wow-duration="1" data-wow-delay="2">...maybe today we can focus on our sun and planets?</h2>
+    <div class="break_one bg">
+        <h1>solar system...</h1>
+        <h2>...one of bilions</h2>
     </div>
-    <div class="scene_sun">
+    <div class="scene_sun bg">
         <div class="sun_container">
             <img class="planet sun_self" src="css/sun.svg" alt="sun-pic">
             <!-- <h1 class="wow fadeInRight" data-wow-duration="1" data-wow-delay="2">There is so much different things in space...</h1>
@@ -43,56 +43,30 @@
         <img class="planet sun_orbit" src="css/sun_orbit.svg" alt="">
         <p id="p4"><span>8</span> planetes orbiting the Sun</p>
         <img class="planet magni_sun" src="css/magnifying_sun.svg" alt="">
-        <p id="p5"><span>magnetic</span> activity can lead to solar explosions</p>
+        <p id="p5" class="magni_p"><span>magnetic</span> activity can lead to solar explosions</p>
+        <p id="p6" class="magni_p">with <span>NUCLEAR FUSION</span> the Sun's core is about 15 million degrees Celsius</p>
+        <p id="p7" class="magni_p">but withouts the Sun'sintense energy, there would be no <span>life</span> on Earth</p>
 
     </div>
-    <div class="planetes_show">
-        <div class="planet_container not_earth">
-            <img class="planet mercury2" src="css/mercury.svg" alt="mercury-pic">
-            <p id="planet_p1">mercury</p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet venus2" src="css/venus.svg" alt="venus-pic">
-            <p><span>venus</span></p>
-        </div>
-        <div class="planet_container earth2_container">
+    <div id="planetes_show" class="planetes_show bg">
+            <img class="planet mercury2 not_earth" src="css/mercury.svg" alt="mercury-pic">
+            <img class="planet venus2 not_earth" src="css/venus.svg" alt="venus-pic">
             <img class="planet earth2" src="css/earth.svg" alt="earth-pic">
-            <p class="earth2_p1">earth</p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet mars2" src="css/mars.svg" alt="mars-pic">
-            <p><span>mars</span></p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet jupiter2" src="css/jupiter.svg" alt="jupiter-pic">
-            <p>jupiter</p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet saturn2" src="css/saturn.svg" alt="saturn-pic">
-            <p><span>saturn</span></p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet uranus2" src="css/uranus.svg" alt="uranus-pic">
-            <p>uranus</p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet neptune2" src="css/neptune.svg" alt="neptune-pic">
-            <p><span>neptune</span></p>
-        </div>
-        <div class="planet_container not_earth">
-            <img class="planet pluto2" src="css/pluto.svg" alt="pluto-pic">
-            <p>pluto (dwarf planet)</p>
+            <img class="planet mars2 not_earth" src="css/mars.svg" alt="mars-pic">
+            <img class="planet jupiter2 not_earth" src="css/jupiter.svg" alt="jupiter-pic">
+            <img class="planet saturn2 not_earth" src="css/saturn.svg" alt="saturn-pic">
+            <img class="planet uranus2 not_earth" src="css/uranus.svg" alt="uranus-pic">
+            <img class="planet neptune2 not_earth" src="css/neptune.svg" alt="neptune-pic">
+            <img class="planet pluto2 not_earth" src="css/pluto.svg" alt="pluto-pic">
+            <p class="earth2_p2 earth_info">population: <span>7.8 billion people</span></p>
+            <p class="earth2_p3 earth_info"><span>earth's shield</span> atmosphere protects us from incoming meteoroids</p>
+            <p class="earth2_p4 earth_info">earth has one <span>moon</span></p>
         </div>
         
-        <p class="earth2_p2 earth_info">population: <span>7.8 billion people</span></p>
-        <p class="earth2_p3 earth_info">earth's shield <span>atmosphere protects us from incoming meteoroids</span></p>
-        <p class="earth2_p4 earth_info">earth has one <span>moon</span></p>
 
-        <div class="planet_container earth5_container">
-            <img class="planet earth5" src="css/earth.svg" alt="earth-pic">
-            <img class="planet moon" src="css/moon.svg" alt="earth-pic">
-        </div>
-        <p class="earth2_p5 earth_info"><span>moon</span> is the only astronomical object other that earth, visited by people</p>
+        
+        <!-- <img class="planet moon" src="css/moon.svg" alt="earth-pic">
+        <p class="earth2_p5 earth_info"><span>moon</span> is the only astronomical object other that earth, visited by people</p> -->
 
     </div>
 
@@ -101,10 +75,9 @@
         <span>loading...</span>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="wow.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script> -->
     <!-- Your code -->
     <script src="code.js"></script>
 </body>

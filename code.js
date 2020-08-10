@@ -4,24 +4,6 @@ $(window).on("load", function(){
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    wow = new WOW(
-        {
-        boxClass:     'wow',      // default
-        animateClass: 'animated', // default
-        offset:       0,          // default
-        mobile:       true,       // default
-        live:         true        // default
-      }
-      )
-      wow.init();
-
-    //Bezier move path
-    // const movePath = {
-    //     curviness: 1,
-    //     autoRotate: true,
-    //     values: [{x: 100, y: -20}, {x: 400, y: 300}, {x: 500, y: 100}]
-    // };
-
 
     //Animation with timeline, sequence is one by one, first animation starting, after fhinishing next one is starting and so on
     //Define timeline
@@ -129,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function() {
         ease: 'Power1.easeOut',
     });
 
-
     var timeLine_sun = gsap.timeline({
         defaults: {duration: 1},
         scrollTrigger:
@@ -195,11 +176,14 @@ document.addEventListener("DOMContentLoaded", function() {
          ease: 'Power1.easeOut',
          opacity: 1
     }, '-=0.75')
-    .to('#p5', {
+    .to('.magni_p', {
         ease: 'Power1.easeOut',
-        opacity: 1
-    }, '-=1');
+        opacity: 1,
+        stagger: 0.5
+    });
   
+
+
 
     var timeLine_planetes = gsap.timeline({
         defaults: {duration: 1},
@@ -230,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
-                end: "+=1000" //Adds more height to scroll - makes animation longer
+                end: "+=2000" //Adds more height to scroll - makes animation longer
             }
     });
     var earth_ani = timeLine_earth.to('.not_earth', {
@@ -242,30 +226,29 @@ document.addEventListener("DOMContentLoaded", function() {
         rotation: -30,
         stagger: 0.1,
     })
-    .to('.earth2_container', {
+    .to('.earth2', {
         duration: 0.75,
         ease: 'Power1.easeInOut',
-        scale: 1.5,
+        scale: 2.5,
     })
-    .from('.earth2_p1', {
+    .from('.earth_info', {
         duration: 0.75,
         ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: -75,
         rotation: -30,
-    },"-=.75")
-    .to('.earth_info', {
-        duration: 0.75,
-        ease: 'Power1.easeInOut',
-        opacity: 1,
-        scale: 1.2,
-        stagger: 1,
+        stagger: 1.5,
     })
     .to('.earth_info', {
         duration: 0.75,
         ease: 'Power1.easeInOut',
         opacity: 0,
-        scale: 1,
-        stagger: 1,
-    },"-=1.25");
+        scale: 0.75,
+        y: -75,
+        rotation: -30,
+        stagger: 1.5,
+    }, "+=3");
 
     //Animation without timeline, sequence based on duration and delay property
     
