@@ -357,6 +357,35 @@ body
     }
 }
 
+.break_two
+{
+    width: 100vw;
+    height: 75vh;
+    background: rgb(24, 73, 94);
+    position: relative;
+    // z-index: 11;
+    h1
+    {
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 46px;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        letter-spacing: 5px;
+        color: #fff;
+    }
+    h2
+    {
+        font-family: 'Bebas Neue', 'sans-serif';
+        font-size: 46px;
+        position: absolute;
+        bottom: 25%;
+        right: 5%;
+        letter-spacing: 5px;
+        color: #fff;
+    }
+}
+
 .planetes_show
 {
     width: 100vw;

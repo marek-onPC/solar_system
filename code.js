@@ -4,19 +4,19 @@ $(window).on("load", function(){
 
 document.addEventListener("DOMContentLoaded", function() {
 
-
     //Animation with timeline, sequence is one by one, first animation starting, after fhinishing next one is starting and so on
-    //Define timeline
+    //Define timeline for a scene (div which inside will be a animation), every set of animation needs new timeLine
     gsap.registerPlugin(ScrollTrigger);
     var timeLine = gsap.timeline({defaults: {duration: 1}});
 
     //Define sequence of animations
+    //.from -> from defined in JS style to original style from CSS
+    //.to -> from original style from CSS to defined in JS style 
     var ani = timeLine.from('.sun', {
         opacity: 0,
         scale: 2.5,
         duration: 2,
         ease: 'Power1.easeOut',
-        // x: (window.innerWidth/2)
         //If you have a couple of elements with same class, and you want them to start one by one, you can use "stagger" parameter
     })
     .to('.sun', {
@@ -111,18 +111,61 @@ document.addEventListener("DOMContentLoaded", function() {
         ease: 'Power1.easeOut',
     });
 
+    //Parallax efect
+    gsap.to('.break_one h1', {
+        scrollTrigger:
+        {
+            trigger: '.break_one', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true, //Animation is going with scroll but is not pinned!
+        },
+        y : 200,
+        ease: 'Power1.easeOut'
+    })
+    gsap.to('.break_one h2', {
+        scrollTrigger:
+        {
+            trigger: '.break_one', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true,
+        },
+        y : -200,
+        ease: 'Power1.easeOut'
+    });
+    gsap.to('.scene', {
+        scrollTrigger:
+        {
+            trigger: '.break_one', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true,
+        },
+        y : 250,
+        ease: 'Power1.easeOut'
+    });
+    //End of parallax efect
+
+
+
     var timeLine_sun = gsap.timeline({
         defaults: {duration: 1},
         scrollTrigger:
             {
                 trigger: '.scene_sun', //At which element the animation is triggered
                 start: "top top", //When (which position of div) animation is triggered
+                end: "bottom top", //When (which position of div) animation is triggered
                 markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
-                end: "+=5000" //Adds more height to scroll - makes animation longer
+                end: "+=6000" //Adds more height to scroll - makes animation longer
             }
     });
+
     var sun_ani = timeLine_sun.from('.sun_self', {
         opacity: 0,
         scale: 2.5,
@@ -182,6 +225,46 @@ document.addEventListener("DOMContentLoaded", function() {
         stagger: 0.5
     });
   
+    //Parallax
+    gsap.to('.break_two h1', {
+        scrollTrigger:
+        {
+            trigger: '.break_two', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true,
+        },
+        x: 200,
+        ease: 'Power1.easeOut'
+    });
+    gsap.to('.break_two h2', {
+        scrollTrigger:
+        {
+            trigger: '.break_two', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true,
+        },
+        x: -200,
+        ease: 'Power1.easeOut'
+    });
+    gsap.to('.break_two', {
+        scrollTrigger:
+        {
+            trigger: '.break_two', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true,
+        },
+        y : -250,
+        ease: 'Power1.easeInOut'
+    });
+    //Parallax
+
+
 
 
 
@@ -214,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
-                end: "+=2000" //Adds more height to scroll - makes animation longer
+                end: "+=3000" //Adds more height to scroll - makes animation longer
             }
     });
     var earth_ani = timeLine_earth.to('.not_earth', {
