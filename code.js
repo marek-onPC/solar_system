@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //Animation with timeline, sequence is one by one, first animation starting, after fhinishing next one is starting and so on
     //Define timeline for a scene (div which inside will be a animation), every set of animation needs new timeLine
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(MotionPathPlugin);
     var timeLine = gsap.timeline({defaults: {duration: 1}});
 
     //Define sequence of animations
@@ -118,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_one', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true, //Animation is going with scroll but is not pinned!
         },
         y : 200,
@@ -130,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_one', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true,
         },
         y : -200,
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_one', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true,
         },
         y : 250,
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 trigger: '.scene_sun', //At which element the animation is triggered
                 start: "top top", //When (which position of div) animation is triggered
                 end: "bottom top", //When (which position of div) animation is triggered
-                markers: true, //Developer start/end markers
+                // markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
                 end: "+=6000" //Adds more height to scroll - makes animation longer
@@ -232,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_two', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true,
         },
         x: 200,
@@ -244,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_two', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true,
         },
         x: -200,
@@ -256,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.break_two', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true,
         },
         y : -250,
@@ -274,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 trigger: '.planet_container',
                 start: "top 75%",
-                markers: true,
+                // markers: true,
             }
     });
     var planetes_ani = timeLine_planetes.to('.planet_container p', {
@@ -294,10 +295,10 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 trigger: '.planetes_show', //At which element the animation is triggered
                 start: "top top", //When (which position of div) animation is triggered
-                markers: true, //Developer start/end markers
+                // markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
-                end: "+=3000" //Adds more height to scroll - makes animation longer
+                end: "+=6000" //Adds more height to scroll - makes animation longer
             }
     });
     var earth_ani = timeLine_earth.to('.not_earth', {
@@ -321,17 +322,63 @@ document.addEventListener("DOMContentLoaded", function() {
         scale: 0.75,
         y: -75,
         rotation: -30,
-        stagger: 1.5,
+        stagger: 1,
     })
     .to('.earth_info', {
-        duration: 0.75,
+        duration: 0.45,
         ease: 'Power1.easeInOut',
         opacity: 0,
         scale: 0.75,
         y: -75,
         rotation: -30,
-        stagger: 1.5,
-    }, "+=3");
+        stagger: 1,
+    })
+    .from('.moon', {opacity: 0}, "-=0.75")
+    .to('.moon', {
+        duration: 3.25,
+        motionPath: {
+            path: [{x:0, y:0}, {x:100, y:-20}, {x:75, y:20}, {x:0, y:60}, {x:-260, y:125}, {x:-250, y: 85}, {x:-185, y: 50}],
+            type: "cubic"
+          }
+    }, "-=1")
+    .to('.moon', {opacity: 0, clearProps:"x"}, "-=1")
+    .from('.moon_earth_info', {
+        // duration: 0.75,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: -10,
+        rotation: -30,
+        stagger: 1,
+    }, "-=0.75")
+    //Preparing an loop for a Moon's orbiting
+    .to('.moon', {opacity: 1}, "-=0.75")
+    .to('.moon', {
+        duration: 3.25,
+        motionPath: {
+            path: [{x:0, y:0}, {x:100, y:-20}, {x:75, y:20}, {x:0, y:60}, {x:-260, y:125}, {x:-250, y: 85}, {x:-185, y: 50}],
+            type: "cubic"
+          }
+    }, "-=1")
+    .to('.moon', {opacity: 0, clearProps:"x"}, "-=1");
+
+    //Parallax efect
+    gsap.to('.moon_earth_info', {
+        scrollTrigger:
+        {
+            trigger: '.moon_scene', //At which element the animation is triggered
+            toggleActions: "play pause resume reset",
+            start: "top bottom", //When (which position of div) animation is triggered
+            markers: true, //Developer start/end markers
+            scrub: true, //Animation is going with scroll but is not pinned!
+        },
+        y : 350,
+        ease: 'Power1.easeOut'
+    });
+    //End of parallax efect
+
+});
+
 
     //Animation without timeline, sequence based on duration and delay property
     
@@ -355,4 +402,3 @@ document.addEventListener("DOMContentLoaded", function() {
     //     delay: 3,
     //     y: 100,
     // })
-});
