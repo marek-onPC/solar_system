@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function() {
             trigger: '.moon_scene', //At which element the animation is triggered
             toggleActions: "play pause resume reset",
             start: "top bottom", //When (which position of div) animation is triggered
-            markers: true, //Developer start/end markers
+            // markers: true, //Developer start/end markers
             scrub: true, //Animation is going with scroll but is not pinned!
         },
         y : 350,
