@@ -496,7 +496,7 @@ body, html {
   opacity: 1;
   width: 350px;
   height: 350px;
-  top: calc(50% - 175px);
+  top: calc(60% - 175px);
   left: calc(50% - 175px);
 }
 
@@ -511,6 +511,69 @@ body, html {
   opacity: 1;
   height: 100%;
   width: 100%;
+}
+
+.moon_scene .luna_area {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(60% - 50px);
+  transform: scale(0.2) rotateZ(-30deg);
+}
+
+.moon_scene .luna_area .luna {
+  width: 100px;
+  height: 100px;
+}
+
+.moon_scene .luna_area .cloud {
+  position: absolute;
+  opacity: 0;
+}
+
+.moon_scene .luna_area .cloud1 {
+  top: 10px;
+  left: -20px;
+  transform: rotateZ(90deg);
+}
+
+.moon_scene .luna_area .cloud2 {
+  top: -20px;
+  left: -20px;
+  transform: rotateZ(90deg);
+}
+
+.moon_scene .luna_area .cloud3 {
+  top: 0px;
+  left: 0px;
+  transform: rotateZ(90deg);
+}
+
+.moon_scene p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Bebas Neue', 'sans-serif';
+  font-size: 16px;
+  opacity: 1;
+  letter-spacing: 5px;
+  color: #fff;
+  width: 200px;
+  height: auto;
+  padding: 13px 0 10px 5px;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.moon_scene p span {
+  margin: 5px 0;
+  color: #fb8108ff;
+}
+
+.moon_scene .moon_info {
+  top: calc(20% - 75px);
+  left: calc(50% - 75px);
 }
 
 @keyframes jump {

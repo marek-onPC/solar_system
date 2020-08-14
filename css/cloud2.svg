@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="cloud2.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 17.727083 7.1437501"
+   height="27"
+   width="67">
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect849"
+       effect="spiro" />
+    <inkscape:path-effect
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect845"
+       effect="spiro" />
+    <inkscape:path-effect
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect841"
+       effect="spiro" />
+    <inkscape:path-effect
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect835"
+       effect="spiro" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="18"
+     inkscape:window-x="192"
+     inkscape:window-height="977"
+     inkscape:window-width="1661"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="5.3405242"
+     inkscape:cx="45.183052"
+     inkscape:zoom="3.959798"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Warstwa 1">
+    <path
+       sodipodi:nodetypes="cacccccc"
+       d="M 12.356522,6.6429418 C 8.4240387,4.8479268 0.63953993,9.4456563 0.02515083,5.3588998 -0.23512557,3.6276087 1.5349848,5.1224238 4.8582877,3.3029804 c 4.094696,-2.95379329 -0.240576,2.6418614 3.431209,-0.5194792 1.178292,3.2749906 -3.835814,-3.928869 3.3393653,1.6817967 1.317739,-1.5021127 3.410547,-5.3101396 -3.5302483,-2.9880382 2.8747513,-1.4803015 6.9054613,-3.2245311 9.4084093,2.3340662 -1.877652,0.5593178 -3.34434,3.5906916 -5.150501,2.8316159 z"
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.055553px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path847" />
+  </g>
+</svg>

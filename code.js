@@ -376,8 +376,68 @@ document.addEventListener("DOMContentLoaded", function() {
         ease: 'Power1.easeOut'
     });
     //End of parallax efect
+    
+    var timeLine_moon = gsap.timeline({
+        defaults: {duration: 1},
+        scrollTrigger:
+            {
+                trigger: '.moon_scene',
+                start: "top top", //When (which position of div) animation is triggered
+                markers: true, //Developer start/end markers
+                pin: true, //Pin to the top of the div dueign animation
+                scrub: 0.5, //"delay effect"
+                end: "+=3000" //Adds more height to scroll - makes animation longer
+            }
+    });
+
+
+    var moon_ani = timeLine_moon.from('.moon_info', {
+        // duration: 0.45,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: -25,
+    })
+    .from('.luna_area', {
+        duration: 3,
+        ease: 'Power1.easeInOut',
+        scale: 1.2,
+        motionPath: {
+            path: [{x:0, y:0}, {x:70, y:20},{x:120, y:150},{x:155, y:575}],
+            type: "cubic"
+          },
+        rotation: 60,
+    },'-=0.2')
+
+    .to('.luna', {
+        duration: 0.1,
+        opacity: 0
+    })
+    .to('.cloud', {
+        scale: 3,
+        opacity: 1
+    })
+    .to('.cloud1', {
+        y: 40,
+        x: 20,
+        rotation: 75
+    },'-=0.5')
+    .to('.cloud2', {
+        y: -50,
+        x: 20,
+        rotation: 105
+    },'-=1')
+    .to('.cloud3', {
+        x: 20,
+    },'-=1')
+    .to('.luna_area', {
+        opacity: 0
+    });
 
 });
+
+
+
 
 
     //Animation without timeline, sequence based on duration and delay property
