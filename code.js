@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // markers: true, //Developer start/end markers
             scrub: true,
         },
-        y : -200,
+        y : -300,
         ease: 'Power1.easeOut'
     });
     gsap.to('.scene', {
@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
-                end: "+=3000" //Adds more height to scroll - makes animation longer
+                end: "+=6000" //Adds more height to scroll - makes animation longer
             }
     });
 
@@ -408,7 +408,6 @@ document.addEventListener("DOMContentLoaded", function() {
           },
         rotation: 60,
     },'-=0.2')
-
     .to('.luna', {
         duration: 0.1,
         opacity: 0
@@ -432,7 +431,42 @@ document.addEventListener("DOMContentLoaded", function() {
     },'-=1')
     .to('.luna_area', {
         opacity: 0
-    });
+    }).to('.moon_info', {
+        // duration: 0.45,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: -25,
+    }).from('.moon_info2', {
+        // duration: 0.45,
+        ease: 'Power1.easeInOut',
+        opacity: 0,
+        scale: 0.75,
+        y: 25,
+    },'-=1')
+    .from('.apollo', {
+        duration: 3.5,
+        ease: 'Power1.easeInOut',
+        scale: 1.2,
+        motionPath: {
+            path: [{x:0, y:0}, {x:270, y:-120},{x:120, y:400},{x:-455, y:575}],
+            type: "cubic"
+          },
+        rotation: 200,
+    },'-=0.2')
+    .to('.apollo', {
+        opacity: 0
+    },)
+    .to('.moon_info2', {
+        opacity: 0
+    },'-=0.6')
+    .to('.apollo_footprint', {
+        opacity: 1,
+        stagger: -1
+    },'-=1')
+    .to('.footer-social-links', {
+        opacity: 1,
+    },'-=1');
 
 });
 
