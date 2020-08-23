@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+$breakpoints: (
+ 'sm': 'screen and (max-width: 576px)',
+ 'md': 'screen and (max-width: 768px)',
+ 'lg': 'screen and (max-width: 992px)',
+ 'xl': 'screen and (max-width: 1200px)'
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 body, html
 {
     overflow-x: hidden;
@@ -64,6 +77,12 @@ body, html
         top: calc(50% - 200px);
         left: calc(50% - 200px);
         z-index: 10;
+        @include mq(md)
+        {
+            width: 275px;
+            top: calc(50% - 200px);
+            left: calc(50% - 100px);
+        }
     }
     .mercury
     {
@@ -74,6 +93,11 @@ body, html
         left: 25%;
         z-index: 9;
         transform: rotateZ(0);
+        @include mq(md)
+        {
+            width: 50px;
+            left: 20%;
+        }
     }
     .venus
     {
@@ -84,6 +108,11 @@ body, html
         left: 30%;
         z-index: 8;
         transform: rotateZ(50deg);
+        @include mq(md)
+        {
+            width: 80px;
+            left: 15%;
+        }
     }
     .earth
     {
@@ -94,6 +123,11 @@ body, html
         left: 38%;
         z-index: 8;
         transform: rotateZ(20deg);
+        @include mq(md)
+        {
+            width: 90px;
+            top: 16%;
+        }
     }
     .mars
     {
@@ -103,6 +137,10 @@ body, html
         top: 53%;
         left: 49%;
         transform: rotateZ(45deg);
+        @include mq(md)
+        {
+            width: 75px;
+        }
     }
     .jupiter
     {
@@ -112,6 +150,10 @@ body, html
         top: 2%;
         left: 56%;
         transform: rotateZ(7deg);
+        @include mq(md)
+        {
+            width: 100px;
+        }
     }
     .saturn
     {
@@ -121,6 +163,10 @@ body, html
         top: 67%;
         left: 63%;
         transform: rotateZ(45deg);
+        @include mq(md)
+        {
+            width: 150px;
+        }
     }
     .neptune
     {
@@ -130,6 +176,11 @@ body, html
         top: 51%;
         left: 86%;
         transform: rotateZ(45deg);
+        @include mq(md)
+        {
+            width: 90px;
+            top: 40%;
+        }
     }
     .uranus
     {
@@ -139,6 +190,10 @@ body, html
         top: 23%;
         left: 77%;
         transform: rotateZ(28deg);
+        @include mq(md)
+        {
+            width: 90px;
+        }
     }
     .pluto
     {
@@ -148,6 +203,10 @@ body, html
         top: 1%;
         left: 94%;
         transform: rotateZ(10deg);
+        @include mq(md)
+        {
+            width: 30px;
+        }
     }
 
     h1
@@ -160,6 +219,7 @@ body, html
         left: calc(50% - 100px);
         letter-spacing: 5px;
         color: #fff;
+        z-index: 20;
     }
     p
     {
@@ -211,6 +271,11 @@ body, html
         left: 5%;
         letter-spacing: 5px;
         color: #fff;
+        @include mq(md)
+        {
+            font-size: 28px;
+            top: 5%;
+        }
     }
     h2
     {
@@ -221,6 +286,10 @@ body, html
         right: 5%;
         letter-spacing: 5px;
         color: #fff;
+        @include mq(md)
+        {
+            font-size: 28px;
+        }
     }
 }
 .scene_sun
@@ -244,6 +313,12 @@ body, html
             top: calc(50% - 200px);
             left: calc(50% - 200px);
             z-index: 10;
+            @include mq(md)
+            {
+                width: 300px;
+                top: calc(50% - 150px);
+                left: calc(50% - 150px);
+            }
         }
         p
         {
@@ -272,18 +347,33 @@ body, html
                 position: absolute;
                 top: 18%;
                 left: 57%;
+                @include mq(md)
+                {
+                    top: 10%;
+                    left: 55%;
+                }
             }
             &:nth-child(3)
             {
                 position: absolute;
                 top: 40%;
                 left: 27%;
+                @include mq(md)
+                {
+                    top: 25%;
+                    left: 10%;
+                }
             }
             &:nth-child(4)
             {
                 position: absolute;
                 top: 60%;
                 left: 62%;
+                @include mq(md)
+                {
+                    top: 70%;
+                    left: 50%;
+                }
             }
             
         }
@@ -297,6 +387,12 @@ body, html
         top: calc(50% - 300px);
         left: calc(50% - 300px);
         opacity: 1;
+        @include mq(md)
+        {
+            width: 450px;
+            top: calc(50% - 225px);
+            left: calc(50% - 225px);
+        }
     }
     .magni_sun
     {
@@ -306,6 +402,12 @@ body, html
         top: calc(50% - 200px);
         left: calc(50% - 200px);
         opacity: 0;
+        @include mq(md)
+        {
+            width: 300px;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px);
+        }
     }
     p
     {
@@ -335,24 +437,44 @@ body, html
             position: absolute;
             top: calc(65%);
             left: calc(70% - 125px);
+            @include mq(md)
+            {
+                top: calc(65%);
+                left: calc(65% - 125px);
+            }
         }
         &:nth-child(5)
         {
             position: absolute;
             top: 22%;
             left: 26%;
+            @include mq(md)
+            {
+                top: 22%;
+                left: 10%;
+            }
         }
         &:nth-child(6)
         {
             position: absolute;
             top: 7%;
             left: 58%;
+            @include mq(md)
+            {
+                top: 7%;
+                left: 35%;
+            }
         }
         &:nth-child(7)
         {
             position: absolute;
             top: 64%;
             left: 53%;
+            @include mq(md)
+            {
+                top: 73%;
+                left: 23%;
+            }
         }
     }
 }
@@ -373,6 +495,12 @@ body, html
         left: 5%;
         letter-spacing: 5px;
         color: #fff;
+        @include mq(md)
+        {
+            font-size: 28px;
+            top: 25%;
+            left: -20%;
+        }
     }
     h2
     {
@@ -383,6 +511,12 @@ body, html
         right: 5%;
         letter-spacing: 5px;
         color: #fff;
+        @include mq(md)
+        {
+            font-size: 28px;
+            bottom: 25%;
+            right: -20%;
+        }
     }
 }
 
@@ -403,50 +537,49 @@ body, html
             position: absolute;
             top: calc(50% - 37.5px);
             left: calc(50% - 55px);
-
         }
 
         .mercury2
         {
             top: calc(20% - 37.5px);
-            left: calc(40% - 55px);
+            left: calc(30% - 55px);
         }
         .venus2
         {
             top: calc(35% - 37.5px);
-            left: calc(45% - 55px);
+            left: calc(35% - 55px);
         }
         .mars2
         {
             top: calc(20% - 37.5px);
-            left: calc(60% - 55px);
+            left: calc(70% - 55px);
         }
         .jupiter2
         {
             top: calc(35% - 37.5px);
-            left: calc(55% - 55px);
+            left: calc(65% - 55px);
         }
         .saturn2
         {
             top: calc(65% - 37.5px);
-            left: calc(55% - 72.5px);
+            left: calc(65% - 72.5px);
             width: 125px;
         }
         .uranus2
         {
             top: calc(80% - 37.5px);
-            left: calc(60% - 55px);
+            left: calc(70% - 55px);
         }
         .neptune2
         {
             top: calc(65% - 37.5px);
-            left: calc(45% - 55px);
+            left: calc(35% - 55px);
 
         }
         .pluto2
         {
             top: calc(80% - 37.5px);
-            left: calc(40% - 55px);
+            left: calc(30% - 55px);
         }
         .moon
         {
@@ -489,30 +622,55 @@ body, html
             position: absolute;
             top: 7%;
             left: 45%;
+            @include mq(md)
+            {
+                top: 10%;
+                left: 45%;
+            }
         }
         &:nth-child(11)
         {
             position: absolute;
             top: 22%;
             left: 30%;
+            @include mq(md)
+            {
+                top: 25%;
+                left: 25%;
+            }
         }
         &:nth-child(12)
         {
             position: absolute;
             top: 30%;
             left: 60%;
+            @include mq(md)
+            {
+                top: 70%;
+                left: 60%;
+            }
         }
         &:nth-child(14)
         {
             position: absolute;
             top: 30%;
             right: 60%;
+            @include mq(md)
+            {
+                top: 20%;
+                right: 60%;
+            }
         }
         &:nth-child(15)
         {
             position: absolute;
             top: 30%;
             left: 60%;
+            @include mq(md)
+            {
+                top: 65%;
+                left: 60%;
+            }
         }
     }
 }
@@ -657,13 +815,14 @@ body, html
     .moon_info
     {
         top: calc(20% - 75px);
-        left: calc(50% - 110px);
+        left: calc(50% - 92px);
     }
     .moon_info2
     {
         top: calc(20% - 75px);
-        left: calc(50% - 110px);
+        left: calc(50% - 92px);
     }
+
 }
 
 .footer-social-links
@@ -671,13 +830,12 @@ body, html
 opacity: 0;
 position: absolute;
 top: calc(20% - 75px);
-left: calc(50% - 170px);
+left: calc(50% - 160px);
 font-size: 14px;
 text-align: center;
 display: flex;
 justify-content: center;
 align-items: center;
-
   a
   {
     display: flex;

@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 trigger: '.moon_scene',
                 start: "top top", //When (which position of div) animation is triggered
-                markers: true, //Developer start/end markers
+                // markers: true, //Developer start/end markers
                 pin: true, //Pin to the top of the div dueign animation
                 scrub: 0.5, //"delay effect"
                 end: "+=6000" //Adds more height to scroll - makes animation longer

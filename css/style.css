@@ -61,6 +61,14 @@ body, html {
   z-index: 10;
 }
 
+@media screen and (max-width: 768px) {
+  .scene .sun {
+    width: 275px;
+    top: calc(50% - 200px);
+    left: calc(50% - 100px);
+  }
+}
+
 .scene .mercury {
   width: 75px;
   height: auto;
@@ -69,6 +77,13 @@ body, html {
   left: 25%;
   z-index: 9;
   transform: rotateZ(0);
+}
+
+@media screen and (max-width: 768px) {
+  .scene .mercury {
+    width: 50px;
+    left: 20%;
+  }
 }
 
 .scene .venus {
@@ -81,6 +96,13 @@ body, html {
   transform: rotateZ(50deg);
 }
 
+@media screen and (max-width: 768px) {
+  .scene .venus {
+    width: 80px;
+    left: 15%;
+  }
+}
+
 .scene .earth {
   width: 135px;
   height: auto;
@@ -89,6 +111,13 @@ body, html {
   left: 38%;
   z-index: 8;
   transform: rotateZ(20deg);
+}
+
+@media screen and (max-width: 768px) {
+  .scene .earth {
+    width: 90px;
+    top: 16%;
+  }
 }
 
 .scene .mars {
@@ -100,6 +129,12 @@ body, html {
   transform: rotateZ(45deg);
 }
 
+@media screen and (max-width: 768px) {
+  .scene .mars {
+    width: 75px;
+  }
+}
+
 .scene .jupiter {
   width: 175px;
   height: auto;
@@ -107,6 +142,12 @@ body, html {
   top: 2%;
   left: 56%;
   transform: rotateZ(7deg);
+}
+
+@media screen and (max-width: 768px) {
+  .scene .jupiter {
+    width: 100px;
+  }
 }
 
 .scene .saturn {
@@ -118,6 +159,12 @@ body, html {
   transform: rotateZ(45deg);
 }
 
+@media screen and (max-width: 768px) {
+  .scene .saturn {
+    width: 150px;
+  }
+}
+
 .scene .neptune {
   width: 155px;
   height: auto;
@@ -125,6 +172,13 @@ body, html {
   top: 51%;
   left: 86%;
   transform: rotateZ(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .scene .neptune {
+    width: 90px;
+    top: 40%;
+  }
 }
 
 .scene .uranus {
@@ -136,6 +190,12 @@ body, html {
   transform: rotateZ(28deg);
 }
 
+@media screen and (max-width: 768px) {
+  .scene .uranus {
+    width: 90px;
+  }
+}
+
 .scene .pluto {
   width: 50px;
   height: auto;
@@ -143,6 +203,12 @@ body, html {
   top: 1%;
   left: 94%;
   transform: rotateZ(10deg);
+}
+
+@media screen and (max-width: 768px) {
+  .scene .pluto {
+    width: 30px;
+  }
 }
 
 .scene h1 {
@@ -154,6 +220,7 @@ body, html {
   left: calc(50% - 100px);
   letter-spacing: 5px;
   color: #fff;
+  z-index: 20;
 }
 
 .scene p {
@@ -205,6 +272,13 @@ body, html {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .break_one h1 {
+    font-size: 28px;
+    top: 5%;
+  }
+}
+
 .break_one h2 {
   font-family: 'Bebas Neue', 'sans-serif';
   font-size: 46px;
@@ -213,6 +287,12 @@ body, html {
   right: 5%;
   letter-spacing: 5px;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .break_one h2 {
+    font-size: 28px;
+  }
 }
 
 .scene_sun {
@@ -235,6 +315,14 @@ body, html {
   top: calc(50% - 200px);
   left: calc(50% - 200px);
   z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .scene_sun .sun_container .sun_self {
+    width: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+  }
 }
 
 .scene_sun .sun_container p {
@@ -265,16 +353,37 @@ body, html {
   left: 57%;
 }
 
+@media screen and (max-width: 768px) {
+  .scene_sun .sun_container p:nth-child(2) {
+    top: 10%;
+    left: 55%;
+  }
+}
+
 .scene_sun .sun_container p:nth-child(3) {
   position: absolute;
   top: 40%;
   left: 27%;
 }
 
+@media screen and (max-width: 768px) {
+  .scene_sun .sun_container p:nth-child(3) {
+    top: 25%;
+    left: 10%;
+  }
+}
+
 .scene_sun .sun_container p:nth-child(4) {
   position: absolute;
   top: 60%;
   left: 62%;
+}
+
+@media screen and (max-width: 768px) {
+  .scene_sun .sun_container p:nth-child(4) {
+    top: 70%;
+    left: 50%;
+  }
 }
 
 .scene_sun .sun_orbit {
@@ -286,6 +395,14 @@ body, html {
   opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .scene_sun .sun_orbit {
+    width: 450px;
+    top: calc(50% - 225px);
+    left: calc(50% - 225px);
+  }
+}
+
 .scene_sun .magni_sun {
   width: 400px;
   height: auto;
@@ -293,6 +410,14 @@ body, html {
   top: calc(50% - 200px);
   left: calc(50% - 200px);
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .scene_sun .magni_sun {
+    width: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+  }
 }
 
 .scene_sun p {
@@ -323,10 +448,24 @@ body, html {
   left: calc(70% - 125px);
 }
 
+@media screen and (max-width: 768px) {
+  .scene_sun p:nth-child(3) {
+    top: calc(65%);
+    left: calc(65% - 125px);
+  }
+}
+
 .scene_sun p:nth-child(5) {
   position: absolute;
   top: 22%;
   left: 26%;
+}
+
+@media screen and (max-width: 768px) {
+  .scene_sun p:nth-child(5) {
+    top: 22%;
+    left: 10%;
+  }
 }
 
 .scene_sun p:nth-child(6) {
@@ -335,10 +474,24 @@ body, html {
   left: 58%;
 }
 
+@media screen and (max-width: 768px) {
+  .scene_sun p:nth-child(6) {
+    top: 7%;
+    left: 35%;
+  }
+}
+
 .scene_sun p:nth-child(7) {
   position: absolute;
   top: 64%;
   left: 53%;
+}
+
+@media screen and (max-width: 768px) {
+  .scene_sun p:nth-child(7) {
+    top: 73%;
+    left: 23%;
+  }
 }
 
 .break_two {
@@ -358,6 +511,14 @@ body, html {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .break_two h1 {
+    font-size: 28px;
+    top: 25%;
+    left: -20%;
+  }
+}
+
 .break_two h2 {
   font-family: 'Bebas Neue', 'sans-serif';
   font-size: 46px;
@@ -366,6 +527,14 @@ body, html {
   right: 5%;
   letter-spacing: 5px;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .break_two h2 {
+    font-size: 28px;
+    bottom: 25%;
+    right: -20%;
+  }
 }
 
 .planetes_show {
@@ -386,43 +555,43 @@ body, html {
 
 .planetes_show .mercury2 {
   top: calc(20% - 37.5px);
-  left: calc(40% - 55px);
+  left: calc(30% - 55px);
 }
 
 .planetes_show .venus2 {
   top: calc(35% - 37.5px);
-  left: calc(45% - 55px);
+  left: calc(35% - 55px);
 }
 
 .planetes_show .mars2 {
   top: calc(20% - 37.5px);
-  left: calc(60% - 55px);
+  left: calc(70% - 55px);
 }
 
 .planetes_show .jupiter2 {
   top: calc(35% - 37.5px);
-  left: calc(55% - 55px);
+  left: calc(65% - 55px);
 }
 
 .planetes_show .saturn2 {
   top: calc(65% - 37.5px);
-  left: calc(55% - 72.5px);
+  left: calc(65% - 72.5px);
   width: 125px;
 }
 
 .planetes_show .uranus2 {
   top: calc(80% - 37.5px);
-  left: calc(60% - 55px);
+  left: calc(70% - 55px);
 }
 
 .planetes_show .neptune2 {
   top: calc(65% - 37.5px);
-  left: calc(45% - 55px);
+  left: calc(35% - 55px);
 }
 
 .planetes_show .pluto2 {
   top: calc(80% - 37.5px);
-  left: calc(40% - 55px);
+  left: calc(30% - 55px);
 }
 
 .planetes_show .moon {
@@ -461,10 +630,24 @@ body, html {
   left: 45%;
 }
 
+@media screen and (max-width: 768px) {
+  .planetes_show p:nth-child(10) {
+    top: 10%;
+    left: 45%;
+  }
+}
+
 .planetes_show p:nth-child(11) {
   position: absolute;
   top: 22%;
   left: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .planetes_show p:nth-child(11) {
+    top: 25%;
+    left: 25%;
+  }
 }
 
 .planetes_show p:nth-child(12) {
@@ -473,16 +656,37 @@ body, html {
   left: 60%;
 }
 
+@media screen and (max-width: 768px) {
+  .planetes_show p:nth-child(12) {
+    top: 70%;
+    left: 60%;
+  }
+}
+
 .planetes_show p:nth-child(14) {
   position: absolute;
   top: 30%;
   right: 60%;
 }
 
+@media screen and (max-width: 768px) {
+  .planetes_show p:nth-child(14) {
+    top: 20%;
+    right: 60%;
+  }
+}
+
 .planetes_show p:nth-child(15) {
   position: absolute;
   top: 30%;
   left: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .planetes_show p:nth-child(15) {
+    top: 65%;
+    left: 60%;
+  }
 }
 
 .moon_scene {
@@ -619,19 +823,19 @@ body, html {
 
 .moon_scene .moon_info {
   top: calc(20% - 75px);
-  left: calc(50% - 110px);
+  left: calc(50% - 92px);
 }
 
 .moon_scene .moon_info2 {
   top: calc(20% - 75px);
-  left: calc(50% - 110px);
+  left: calc(50% - 92px);
 }
 
 .footer-social-links {
   opacity: 0;
   position: absolute;
   top: calc(20% - 75px);
-  left: calc(50% - 170px);
+  left: calc(50% - 160px);
   font-size: 14px;
   text-align: center;
   display: flex;
